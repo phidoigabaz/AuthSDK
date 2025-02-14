@@ -5,9 +5,10 @@ import PackageDescription
 
 let package = Package(
     name: "AuthSDK",
-    platforms: [.iOS(.v13), // framework hỗ trợ tối thiểu từ ios 13
-                .macOS(.v10_15)], // // framework hỗ trợ tối thiểu từ macos 10.15
-    
+    platforms: [
+        .iOS(.v13), // framework hỗ trợ tối thiểu từ ios 13
+        .macOS(.v10_15) // // framework hỗ trợ tối thiểu từ macos 10.15
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -28,7 +29,7 @@ let package = Package(
             path: "Sources/AuthSDK",
             swiftSettings: [
                 .define("SWIFT_PACKAGE"),
-                .unsafeFlags(["-target", "arm64-apple-ios", "-target", "x86_64-apple-ios"])
+                //.unsafeFlags(["-target", "arm64-apple-ios", "-target", "x86_64-apple-ios"])
             ]
         ),
         .testTarget(
